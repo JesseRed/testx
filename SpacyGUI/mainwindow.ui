@@ -1,0 +1,653 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1392</width>
+    <height>1381</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QPushButton" name="pushButton_init_home">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>0</y>
+      <width>75</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>init home</string>
+    </property>
+   </widget>
+   <widget class="QGroupBox" name="groupBox">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>30</y>
+      <width>581</width>
+      <height>281</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Extract Text from XML File</string>
+    </property>
+    <widget class="QLineEdit" name="lineEdit_text_file_input_dir_XML">
+     <property name="geometry">
+      <rect>
+       <x>160</x>
+       <y>30</y>
+       <width>251</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>G:\Daten\Elsevir_paper\XMLJSON</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_3">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>30</y>
+       <width>91</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>XML file Input dir</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>190</y>
+       <width>91</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Text file Input dir</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEdit_text_file_input_dir_TXT">
+     <property name="geometry">
+      <rect>
+       <x>160</x>
+       <y>190</y>
+       <width>251</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>G:\Daten\Elsevir_paper\TXT_extract</string>
+     </property>
+    </widget>
+    <widget class="Line" name="line">
+     <property name="geometry">
+      <rect>
+       <x>180</x>
+       <y>60</y>
+       <width>20</width>
+       <height>121</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>8</pointsize>
+      </font>
+     </property>
+     <property name="lineWidth">
+      <number>4</number>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="checkBox_prepro_abstract">
+     <property name="geometry">
+      <rect>
+       <x>230</x>
+       <y>70</y>
+       <width>70</width>
+       <height>17</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Abstract</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="checkBox_prepro_introduction">
+     <property name="geometry">
+      <rect>
+       <x>230</x>
+       <y>90</y>
+       <width>81</width>
+       <height>17</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Introduction</string>
+     </property>
+     <property name="checked">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="checkBox_prepro_methods">
+     <property name="geometry">
+      <rect>
+       <x>230</x>
+       <y>110</y>
+       <width>70</width>
+       <height>17</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Methods</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="checkBox_prepro_results">
+     <property name="geometry">
+      <rect>
+       <x>230</x>
+       <y>130</y>
+       <width>70</width>
+       <height>17</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Results</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="checkBox_prepro_discussion">
+     <property name="geometry">
+      <rect>
+       <x>230</x>
+       <y>150</y>
+       <width>70</width>
+       <height>17</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Discussion</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="checkBox_prepro_conclusion">
+     <property name="geometry">
+      <rect>
+       <x>230</x>
+       <y>170</y>
+       <width>70</width>
+       <height>17</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Conclusion</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_preprocess">
+     <property name="geometry">
+      <rect>
+       <x>210</x>
+       <y>240</y>
+       <width>75</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>preprocess</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_text_file_output_dir">
+    <property name="geometry">
+     <rect>
+      <x>210</x>
+      <y>1280</y>
+      <width>251</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>G:\Daten\Elsevir_paper\Spacy_prepro</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>1280</y>
+      <width>91</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Spacy file Output dir</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_init_work">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>0</y>
+      <width>75</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>init work</string>
+    </property>
+   </widget>
+   <widget class="QTextEdit" name="textEdit_ent_sentence">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>450</y>
+      <width>1321</width>
+      <height>121</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_get_next_sentence">
+    <property name="geometry">
+     <rect>
+      <x>1030</x>
+      <y>1250</y>
+      <width>291</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>get next sentence</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_test">
+    <property name="geometry">
+     <rect>
+      <x>860</x>
+      <y>1250</y>
+      <width>75</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>test</string>
+    </property>
+   </widget>
+   <widget class="QTextEdit" name="textEdit_original_sentence">
+    <property name="geometry">
+     <rect>
+      <x>43</x>
+      <y>360</y>
+      <width>1311</width>
+      <height>71</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QTextEdit" name="textEdit_entities">
+    <property name="geometry">
+     <rect>
+      <x>720</x>
+      <y>10</y>
+      <width>451</width>
+      <height>301</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_2">
+    <property name="geometry">
+     <rect>
+      <x>700</x>
+      <y>910</y>
+      <width>681</width>
+      <height>161</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Pattern Creator</string>
+    </property>
+    <widget class="QTextEdit" name="textEdit_pattern">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>60</y>
+       <width>591</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="html">
+      <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt; [{&amp;quot;label&amp;quot;: &amp;quot;ORG&amp;quot;, &amp;quot;pattern&amp;quot;: &amp;quot;Apple&amp;quot;}, {&amp;quot;label&amp;quot;: &amp;quot;GPE&amp;quot;, &amp;quot;pattern&amp;quot;: [{&amp;quot;lower&amp;quot;: &amp;quot;san&amp;quot;}, {&amp;quot;lower&amp;quot;: &amp;quot;francisco&amp;quot;}]}]&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_add_pattern">
+     <property name="geometry">
+      <rect>
+       <x>540</x>
+       <y>120</y>
+       <width>75</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>add pattern</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEdit_file_to_save_patterns">
+     <property name="geometry">
+      <rect>
+       <x>160</x>
+       <y>20</y>
+       <width>391</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>./patterns.jsonl</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_4">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>20</y>
+       <width>111</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>file to save patterns</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="TRAIN_DATA">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>630</y>
+      <width>1321</width>
+      <height>211</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>TRAIN_DATA</string>
+    </property>
+    <widget class="QTextEdit" name="textEdit_TRAIN_DATA_sentences">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>50</y>
+       <width>1281</width>
+       <height>101</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_add_sentence_to_TRAIN_DATA">
+     <property name="geometry">
+      <rect>
+       <x>954</x>
+       <y>170</y>
+       <width>191</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>add Sentence to TRAIN_DATA</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_5">
+     <property name="geometry">
+      <rect>
+       <x>60</x>
+       <y>20</y>
+       <width>191</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>file to save TRAIN_DATA sentences</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEdit_file_to_save_TRAIN_DATA">
+     <property name="geometry">
+      <rect>
+       <x>350</x>
+       <y>20</y>
+       <width>391</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>./TRAIN_DATA01.txt</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QListWidget" name="listWidget_unknown_words">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>900</y>
+      <width>191</width>
+      <height>192</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_6">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>860</y>
+      <width>181</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>16</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Unknown Words</string>
+    </property>
+   </widget>
+   <widget class="QListWidget" name="listWidget_entities">
+    <property name="geometry">
+     <rect>
+      <x>270</x>
+      <y>900</y>
+      <width>151</width>
+      <height>271</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_7">
+    <property name="geometry">
+     <rect>
+      <x>300</x>
+      <y>860</y>
+      <width>101</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>16</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Entities</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_auto_create_pattern">
+    <property name="geometry">
+     <rect>
+      <x>440</x>
+      <y>980</y>
+      <width>131</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>auto create pattern---&gt;</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_save_selected_to_stringstore">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>1150</y>
+      <width>191</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>save selected to StringStore</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_stringstore_dir">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>1110</y>
+      <width>181</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>./stringstore</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_entity_file">
+    <property name="geometry">
+     <rect>
+      <x>270</x>
+      <y>1180</y>
+      <width>151</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>./entities.json</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_entity_to_add">
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>1210</y>
+      <width>113</width>
+      <height>20</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_add_entity">
+    <property name="geometry">
+     <rect>
+      <x>430</x>
+      <y>1220</y>
+      <width>75</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>add entity</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_entity_description_to_add">
+    <property name="geometry">
+     <rect>
+      <x>272</x>
+      <y>1240</y>
+      <width>151</width>
+      <height>20</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_8">
+    <property name="geometry">
+     <rect>
+      <x>240</x>
+      <y>1210</y>
+      <width>61</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Entity name</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_9">
+    <property name="geometry">
+     <rect>
+      <x>200</x>
+      <y>1240</y>
+      <width>61</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Description</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_add_stringstore_temporarly_to_vocab">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>1180</y>
+      <width>191</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>add temporarely StringStore to vocab</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_auto_train_pattern_from_selection">
+    <property name="geometry">
+     <rect>
+      <x>670</x>
+      <y>600</y>
+      <width>311</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Selection + Entity to TrainSentence and Pattern</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1392</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>

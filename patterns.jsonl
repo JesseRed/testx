@@ -1,0 +1,14 @@
+{"label":"GPE","pattern":[{"lower":"san"},{"lower":"francisco"}]}
+{"label":"ORG","pattern":"Apple"}
+{"label":"REF","pattern":"AuthorEtAl"}
+{"label":"GPE","pattern":[{"lower":"san"},{"lower":"francisco"}]}
+{"label":"GPE","pattern":[{"lower":"san"},{"lower":"francisco"}]}
+{"label":"ORG","pattern":"Apple"}
+{"label":"ORG","pattern":"Apple"}
+{"label":"REF","pattern":"AuthorEtAl"}
+{"label":"GPE","pattern":[{"lower":"san"},{"lower":"francisco"}]}
+{"label":"GPE","pattern":[{"lower":"san"},{"lower":"francisco"}]}
+{"label":"ORG","pattern":"Apple"}
+{"label":"ORG","pattern":"Apple"}
+{"label":"ORG","pattern":"AuthorEtAl"}
+{"label":"REF","pattern":"AuthorEtAl"}
