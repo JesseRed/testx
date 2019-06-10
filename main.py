@@ -41,6 +41,8 @@ class MainWindow(QtWidgets.QMainWindow):
         self.ui.pushButton_auto_create_pattern.clicked.connect(self.auto_create_pattern)
         self.ui.pushButton_add_stringstore_temporarly_to_vocab.clicked.connect(self.add_stringstore_to_vocab_temporarely)
         self.ui.pushButton_auto_train_pattern_from_selection.clicked.connect(self.auto_train_pattern_from_selection)
+        self.ui.pushButton_add_pattern_reintegrate.clicked.connect(self.reintegrate_pattern_to_spacy)
+        self.ui.pushButton_add_drug_patterns_before_ner.clicked.connect(self.add_pattern_jsonl_file_to_vocab_and_entity_matcher)
 
     def init(self):
         print("Hello Spacy")
@@ -54,13 +56,21 @@ class MainWindow(QtWidgets.QMainWindow):
             return
         
         (sentence, unknown_words) = self.sp.get_next_sentence()
-        train_text = "(\"" + sentence.text + "\", {\"entities\": [  "
+        train_text = "('" + sentence.text + "', {'entities': [  "
         ent_text = ""
         for ent in sentence.ents:
             ent_text = ent_text + (" " + ent.text + " --- " + ent.label_ + " " +str(spacy.explain(ent.label_)) + "\n")
-            train_text += "(" + str(ent.start_char) + ", " + str(ent.end_char) + ", \"" + ent.label_ + "\"), "
+            train_text += "(" + str(ent.start_char) + ", " + str(ent.end_char) + ", '" + ent.label_ + "'), "
         train_text = train_text[:-2] + "]})"
         self.ui.textEdit_TRAIN_DATA_sentences.setText(train_text)
+        # get alternative TExt
+        alt_text = self.sp.get_sentence_alt_text(sentence)
+        tok_text = ""
+        for token in sentence:
+            tok_text = tok_text + token.text + "#"
+        
+        self.ui.textEdit_alt_text_sentence.setText(alt_text)
+        self.ui.textEdit_token_sentence.setText(tok_text)
         self.ui.textEdit_entities.setText(ent_text)
         html = displacy.render(sentence, style="ent", page=True)
         self.ui.textEdit_original_sentence.setText(sentence.text)
@@ -104,9 +114,9 @@ class MainWindow(QtWidgets.QMainWindow):
 
     def add_pattern(self):
         pattern = self.ui.textEdit_pattern.toPlainText()
-        print(pattern)
         pattern = eval(pattern)
-        self.sp.add_pattern_to_entity_ruler(pattern)
+        file = self.ui.lineEdit_file_to_save_patterns.text()
+        self.sp.add_pattern_to_entity_ruler(pattern,file)
 
     def test(self):
         text = """But Google is starting from behind. The company made a late push
@@ -166,25 +176,46 @@ class MainWindow(QtWidgets.QMainWindow):
             print("please select exactly one Word in Entity list")
             return
         entity = entity_list[0].text()
-        pattern_string = ("[{\"label\": \"" + entity + "\", \"pattern\": \"" + new_word + "\"}]")
+        pattern_string = self.build_pattern_string(entity,new_word)
         self.ui.textEdit_pattern.setText(pattern_string)
         
     def auto_train_pattern_from_selection(self):
-        cursor = self.ui.textEdit_ent_sentence.textCursor()
+        cursor = self.ui.textEdit_original_sentence.textCursor()
+#        cursor = self.ui.textEdit_ent_sentence.textCursor()
         new_word = cursor.selectedText()
 
         entity_list = self.ui.listWidget_entities.selectedItems()
         if not len(entity_list)==1:
             entity = 'Placeholder'
         else:
-            entity = entity_list[0]
-        pattern_string = ("[{\"label\": \"" + entity + "\", \"pattern\": \"" + new_word + "\"}]")
+            entity = entity_list[0].text()
+        pattern_string = self.build_pattern_string(entity,new_word)
         self.ui.textEdit_pattern.setText(pattern_string)
- 
 
+        train_text = self.ui.textEdit_TRAIN_DATA_sentences.toPlainText();
+        train_text = train_text[:-3]
+        if train_text[-1]==')':
+            train_text = train_text + ", "
+        start_index = cursor.selectionStart()
+        stop_index = cursor.selectionEnd()
+        new_entity_text = "(" + str(start_index) + ", " + str(stop_index) + ", '" + entity + "')]})"
+        print(new_entity_text)
+        self.ui.textEdit_TRAIN_DATA_sentences.setText(train_text + new_entity_text)            
+#("tAl.", {"entities": [  (102, 115, "DATE"), (194, 196, "ORG"), (203, 213, "REF")]})
 
+    def reintegrate_pattern_to_spacy(self):
+        self.sp.reintegrate_patterns_to_ruler(self.ui.lineEdit_file_to_save_patterns.text());
 
+    def add_pattern_jsonl_file_to_vocab_and_entity_matcher(self):
+        file = self.ui.lineEdit_drugs_pattern_jsonl.text()
+        self.sp.add_pattern_jsonl_file_to_vocab_and_entity_matcher( file)
 
+    def build_pattern_string(self, entity, new_word):
+        if self.ui.checkBox_lower.isChecked():
+            pattern_string = ("[{'label': '" + entity + "', 'pattern': [{'lower': '" + new_word + "'}]}]")
+        else:
+            pattern_string = ("[{'label': '" + entity + "', 'pattern': '" + new_word + "'}]")
+        return pattern_string
 
 window = MainWindow()
 window.show()

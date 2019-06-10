@@ -1,14 +1,30 @@
-{"label":"GPE","pattern":[{"lower":"san"},{"lower":"francisco"}]}
-{"label":"ORG","pattern":"Apple"}
+{"label":"REF","pattern":[{"IS_ALPHA":true},{"TEXT":"et"},{"TEXT":"al"}]}
+{"label":"TREATMENT","pattern":"APS"}
+{"label":"DRUG","pattern":[{"LOWER":"barbiturates"}]}
+{"label":"GPE","pattern":[{"lower":"san"},{"lower":"franciscosfg"}]}
+{"label":"QUANTITY","pattern":[{"LIKE_NUM":true},{"TEXT":"g"}]}
+{"label":"QUANTITY","pattern":[{"LIKE_NUM":true},{"TEXT":"kg"}]}
+{"label":"DRUG","pattern":[{"lower":"codeine"}]}
+{"label":"DISEASE","pattern":"MS"}
+{"label":"PATMEASURE","pattern":"VAS"}
+{"label":"DISEASE","pattern":"AIDS"}
+{"label":"METHOD","pattern":"PCA"}
+{"label":"QUANTITY","pattern":[{"LIKE_NUM": true},{"TEXT":"ng"}]}
+{"label":"QUANTITY","pattern":[{"LIKE_NUM":true},{"TEXT":"ng"}]}
+{"label":"QUANTITY","pattern":[{"LIKE_NUM": true},{"TEXT":"kg"}]}
 {"label":"REF","pattern":"AuthorEtAl"}
-{"label":"GPE","pattern":[{"lower":"san"},{"lower":"francisco"}]}
-{"label":"GPE","pattern":[{"lower":"san"},{"lower":"francisco"}]}
-{"label":"ORG","pattern":"Apple"}
-{"label":"ORG","pattern":"Apple"}
-{"label":"REF","pattern":"AuthorEtAl"}
-{"label":"GPE","pattern":[{"lower":"san"},{"lower":"francisco"}]}
-{"label":"GPE","pattern":[{"lower":"san"},{"lower":"francisco"}]}
-{"label":"ORG","pattern":"Apple"}
-{"label":"ORG","pattern":"Apple"}
-{"label":"ORG","pattern":"AuthorEtAl"}
-{"label":"REF","pattern":"AuthorEtAl"}
+{"label":"DRUG","pattern":[{"lower":"nortriptyline"}]}
+{"label":"DISEASE","pattern":"glaucoma"}
+{"label":"TREATMENT","pattern":[{"lower":"Caudal epidural analgesia"}]}
+{"label":"DISEASE","pattern":"cancer"}
+{"label":"QUANTITY","pattern":[{"LIKE_NUM":true},{"TEXT":"mg"}]}
+{"label":"DRUG","pattern":[{"lower":"tramadol"}]}
+{"label":"PATMEASURE","pattern":"visual analog score"}
+{"label":"RECEPTOR","pattern":[{"lower":"\u03b1-2A-adrenoceptor"}]}
+{"label":"DRUG","pattern":[{"lower":"pethidine"}]}
+{"label":"REF","pattern":[{"IS_ALPHA": true},{"TEXT":"et"},{"TEXT":"al"}]}
+{"label":"DRUG","pattern":[{"lower":"hydromorophone"}]}
+{"label":"QUANTITY","pattern":[{"LIKE_NUM": true},{"TEXT":"mg"}]}
+{"label":"QUANTITY","pattern":[{"LIKE_NUM": true},{"TEXT":"g"}]}
+{"label":"REF","pattern":"AuthorsEtAl"}
+{"label": "DRUG", "pattern": [{"LOWER": "barbiturates"}]}

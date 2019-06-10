@@ -1,0 +1,28 @@
+{"label":"NUMCARDINAL","pattern":[{"ENT_TYPE": "CARDINAL", "TEXT": {"REGEX": "\d+[^\D]"}}]}
+{"label":"UNITS","pattern":[{"LOWER": "mg"}]}
+{"label":"UNITS","pattern":[{"LOWER": "ng"}]}
+{"label":"UNITS","pattern":[{"LOWER": "g"}]}
+{"label":"UNITS","pattern":[{"LOWER": "mcgmL−1"}]}
+{"label":"NUM_UNIT","pattern":[{"LIKE_NUM": True},{"LOWER": "mg"}]}
+{"label":"NUM_UNIT","pattern":[{"LIKE_NUM": True},{"LOWER": "ml"}]}
+{"label":"NUM_UNIT","pattern":[{"LIKE_NUM": True},{"LOWER": "mL"}]}
+{"label":"NUM_UNIT","pattern":[{"LIKE_NUM": True},{"LOWER": "g"}]}
+{"label":"NUM_UNIT","pattern":[{"LIKE_NUM": True},{"LOWER": "mcgmL−1"}]}
+{"label":"NUMUNIT","pattern":[{"TEXT": {"REGEX": "\d+mcgmL−1"}}]}
+{"label":"NUMUNIT","pattern":[{"TEXT": {"REGEX": "\d+mg"}}]}
+{"label":"NUMUNIT","pattern":[{"TEXT": {"REGEX": "\d+g"}}]}
+{"label":"NUMUNIT","pattern":[{"TEXT": {"REGEX": "\d+ng"}}]}
+{"label":"DRUGNAME","pattern":[{"ENT_TYPE": "DRUG"}]}
+{"label":"NAMEETAL","pattern":[{"IS_ALPHA": True},{"TEXT": "et"},{"TEXT": "al"},{"TEXT": "."}]}
+{"label":"REFS","pattern":[{"TEXT": "AuthorsEtAl"}]}
+{"label":"REFx","pattern":[{"TEXT": "AuthorEtAl"}]}
+{"label":"REFpunkt","pattern":[{"TEXT": "AuthorEtAl"},{"TEXT": "."}]}
+{"label":"XYMIN","pattern":[{"LOWER": {"IN": ["min", "hours"]}}]}
+{"label":"XY-YEARREG","pattern":[{"TEXT": {"REGEX": "\d+-year"}}]}
+{"label":"XYYEARREG","pattern":[{"TEXT": {"REGEX": "\d+year"}}]}
+{"label":"XYMINREG","pattern":[{"TEXT": {"REGEX": "\d+min"}}]}
+{"label":"XY-MINREG","pattern":[{"TEXT": {"REGEX": "\d+-min"}}]}
+{"label":"XY-PROCENT","pattern":[{"LIKE_NUM": True},{"TEXT": "%"}]}
+{"label":"XY_RECEPTOR","pattern":[{"TEXT":{"REGEX": "(?=.*\d)(?=.*\w).*"}},{"TEXT": "-"},{"TEXT": {"REGEX": "oceptor$"}}]}
+{"label":"XY-RECEPTOR","pattern":[{"TEXT":{"REGEX": "(?=.*\d)(?=.*-)(?=.*\w).*"}},{"TEXT": {"REGEX": "oceptor$"}}]}
+{"label":"Dummy","pattern":[{"TEXT": "AuthorEtAl"},{"TEXT": "."}]}
